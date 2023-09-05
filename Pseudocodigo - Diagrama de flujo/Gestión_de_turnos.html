@@ -1,0 +1,168 @@
+<HTML><HEAD>
+	<TITLE>TRABAJO FINAL _ DIAZ HEREDIA NOAH GAEL.psc</TITLE>
+	<STYLE type="text/css">
+		.SSD { color:#FFFFFF; background-color:#000000; }
+		.SS0 { color:#000000; background-color:#FFFFFF; }
+		.SS1 { color:#000000; background-color:#FFFFFF; }
+		.SS2 { font-style: italic; color:#969696; background-color:#FFFFFF; }
+		.SS3 { font-style: italic; color:#0000FF; background-color:#FFFFFF; }
+		.SS4 { color:#8E6B23; background-color:#FFFFFF; }
+		.SS5 { font-weight: bold; color:#000080; background-color:#FFFFFF; }
+		.SS6 { color:#FF0000; background-color:#FFFFFF; }
+		.SS7 { color:#FF0000; background-color:#FFFFFF; }
+		.SS8 { color:#DB70DB; background-color:#FFFFFF; }
+		.SS9 { color:#238E23; background-color:#FFFFFF; }
+		.SS10 { font-weight: bold; color:#000000; background-color:#FFFFFF; }
+		.SS11 { color:#000000; background-color:#FFFFFF; }
+		.SS12 { color:#FF0000; background-color:#F0F0F0; }
+		.SS13 { color:#000000; background-color:#FFFFFF; }
+		.SS14 { color:#DB70DB; background-color:#FFFFFF; }
+		.SS15 { color:#238E23; background-color:#FFFFFF; }
+		.SS16 { color:#000080; background-color:#FFFFFF; }
+		.SS17 { color:#42426F; background-color:#FFFFFF; }
+		.SS18 { color:#FF0000; background-color:#FFFFFF; }
+		.SS19 { color:#000000; background-color:#BFD8D8; }
+		.SS34 { font-weight: bold; color:#FF0000; background-color:#F0F0FF; }
+		.SS35 { font-weight: bold; color:#800000; background-color:#FFFFFF; }
+	</STYLE>
+</HEAD><BODY><PRE>
+<SPAN class="SS5">Algoritmo</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">agenda_medica</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS2">//Definición de variables.</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS5">Definir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">citasMedicas</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Como</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Caracter</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS5">Definir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">nombrePaciente</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">fechaCita</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">horaCita</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">profesional</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">profesion</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">como</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">cadena</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS5">Definir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">opciones</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">numCitas</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">como</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">entero</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS5">Dimension</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">dias</SPAN><SPAN class="SS10">[</SPAN><SPAN class="SS4">5</SPAN><SPAN class="SS10">]</SPAN><SPAN class="SS0"> 
+    </SPAN><SPAN class="SS5">Dimension</SPAN><SPAN class="SS0">  </SPAN><SPAN class="SS11">horarios</SPAN><SPAN class="SS10">[</SPAN><SPAN class="SS4">8</SPAN><SPAN class="SS10">]</SPAN><SPAN class="SS0"> 
+    
+    </SPAN><SPAN class="SS2">//Reserva de turnos día.</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS11">dias</SPAN><SPAN class="SS10">[</SPAN><SPAN class="SS4">1</SPAN><SPAN class="SS10">]</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"1.Lunes "</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS11">dias</SPAN><SPAN class="SS10">[</SPAN><SPAN class="SS4">2</SPAN><SPAN class="SS10">]</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"2.Martes "</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS11">dias</SPAN><SPAN class="SS10">[</SPAN><SPAN class="SS4">3</SPAN><SPAN class="SS10">]</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"3.Miércoles "</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS11">dias</SPAN><SPAN class="SS10">[</SPAN><SPAN class="SS4">4</SPAN><SPAN class="SS10">]</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"4.Jueves "</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS11">dias</SPAN><SPAN class="SS10">[</SPAN><SPAN class="SS4">5</SPAN><SPAN class="SS10">]</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"5.Viernes "</SPAN><SPAN class="SS0">
+    
+    </SPAN><SPAN class="SS2">//Reserva de  turno horario.</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS11">horarios</SPAN><SPAN class="SS10">[</SPAN><SPAN class="SS4">1</SPAN><SPAN class="SS10">]</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"09:00 a.m"</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS11">horarios</SPAN><SPAN class="SS10">[</SPAN><SPAN class="SS4">2</SPAN><SPAN class="SS10">]</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"10:00 a.m"</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS11">horarios</SPAN><SPAN class="SS10">[</SPAN><SPAN class="SS4">3</SPAN><SPAN class="SS10">]</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"11:00 a.m"</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS11">horarios</SPAN><SPAN class="SS10">[</SPAN><SPAN class="SS4">4</SPAN><SPAN class="SS10">]</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"14:00 p.m"</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS11">horarios</SPAN><SPAN class="SS10">[</SPAN><SPAN class="SS4">5</SPAN><SPAN class="SS10">]</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"15:00 p.m"</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS11">horarios</SPAN><SPAN class="SS10">[</SPAN><SPAN class="SS4">6</SPAN><SPAN class="SS10">]</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"16:00 p.m"</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS11">horarios</SPAN><SPAN class="SS10">[</SPAN><SPAN class="SS4">7</SPAN><SPAN class="SS10">]</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"17:00 p.m"</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS11">horarios</SPAN><SPAN class="SS10">[</SPAN><SPAN class="SS4">8</SPAN><SPAN class="SS10">]</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"18:00 p.m"</SPAN><SPAN class="SS0">
+    
+    </SPAN><SPAN class="SS2">//Menú principal.</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS5">Mientras</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">opcion</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">≠</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">4</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Hacer</SPAN><SPAN class="SS0">
+        
+   
+    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"----- Menú de Citas Médicas -----"</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"1. Agendar una cita médica"</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"2. Ver citas agendadas"</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"3. Cancelar una cita"</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"4. Salir"</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"-----------------------------------"</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Seleccione una opción: "</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS5">Leer</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">opcion</SPAN><SPAN class="SS0">
+    
+    </SPAN><SPAN class="SS2">//Ingreso de datos de paciente, profesional (opcion 1 del menú), día y horario disponibles.</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS5">Segun</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">opcion</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Hacer</SPAN><SPAN class="SS0">
+        
+        </SPAN><SPAN class="SS5">Caso</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">1</SPAN><SPAN class="SS10">:</SPAN><SPAN class="SS0">
+            </SPAN><SPAN class="SS5">Si</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">numCitas</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">&lt;</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">5</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Entonces</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Ingrese el nombre del paciente: "</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Leer</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">nombrePaciente</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Ingrese nombre del profesional de salud: "</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">profesional</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">leer</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">profesional</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Ingrese Profesión: "</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">profesion</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">leer</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">profesion</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Días disponibles para citas médicas:"</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Para</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">i</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">1</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Hasta</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">5</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Hacer</SPAN><SPAN class="SS0">
+                    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">i</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">" - "</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">dias</SPAN><SPAN class="SS10">[</SPAN><SPAN class="SS11">i</SPAN><SPAN class="SS10">]</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Fin</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Para</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Seleccione el número correspondiente al día deseado:"</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Leer</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">seleccionado</SPAN><SPAN class="SS0">
+                
+                </SPAN><SPAN class="SS5">Si</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">seleccionado</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">≥</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">1</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">y</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">seleccionado</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">≤</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">5</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Entonces</SPAN><SPAN class="SS0">
+                    </SPAN><SPAN class="SS11">fechaCita</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">dias</SPAN><SPAN class="SS10">[</SPAN><SPAN class="SS11">seleccionado</SPAN><SPAN class="SS10">]</SPAN><SPAN class="SS0">
+                    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Ha seleccionado el dia: "</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">fechaCita</SPAN><SPAN class="SS0">
+                    
+                </SPAN><SPAN class="SS5">Sino</SPAN><SPAN class="SS0">
+                    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Selección no válida. Por favor, seleccione un número válido."</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Fin</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Si</SPAN><SPAN class="SS0">
+                
+                </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Horarios disponibles para citas médicas:"</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Para</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">i</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">1</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Hasta</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">8</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Hacer</SPAN><SPAN class="SS0">
+                    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">i</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">" - "</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">horarios</SPAN><SPAN class="SS10">[</SPAN><SPAN class="SS11">i</SPAN><SPAN class="SS10">]</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Fin</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Para</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Seleccione el número correspondiente al horario deseado:"</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Leer</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">seleccionado</SPAN><SPAN class="SS0">
+                
+                </SPAN><SPAN class="SS5">Si</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">seleccionado</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">≥</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">1</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">y</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">seleccionado</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">≤</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">8</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Entonces</SPAN><SPAN class="SS0">
+                    </SPAN><SPAN class="SS11">horaCita</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">horarios</SPAN><SPAN class="SS10">[</SPAN><SPAN class="SS11">seleccionado</SPAN><SPAN class="SS10">]</SPAN><SPAN class="SS0">
+                    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Ha seleccionado el horario: "</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">horaCita</SPAN><SPAN class="SS0">
+                    
+                </SPAN><SPAN class="SS5">Sino</SPAN><SPAN class="SS0">
+                    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Selección no válida. Por favor, seleccione un número válido."</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Fin</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Si</SPAN><SPAN class="SS0">
+                
+                
+                </SPAN><SPAN class="SS11">numCitas</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">numCitas</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">+</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">1</SPAN><SPAN class="SS0">
+                
+                </SPAN><SPAN class="SS2">//Datos ingresados del paciente, profesional, día y horario seleccionado.</SPAN><SPAN class="SS0">
+                
+                </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"-----------------------------------"</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Cita agendada exitosamente."</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Imprimir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Nombre del Paciente: "</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS11">nombrePaciente</SPAN><SPAN class="SS0">   
+                </SPAN><SPAN class="SS5">Imprimir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Día seleccionado: "</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS11">fechaCita</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Imprimir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Horario Seleccionado "</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">horaCita</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Imprimir</SPAN><SPAN class="SS0">  </SPAN><SPAN class="SS6">"Nombre doctor: "</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">profesional</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Imprimir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Profesion: "</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">profesion</SPAN><SPAN class="SS0">
+                
+                
+            </SPAN><SPAN class="SS5">Sino</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"No hay disponibilidad para agendar más citas."</SPAN><SPAN class="SS0">
+            </SPAN><SPAN class="SS5">FinSi</SPAN><SPAN class="SS0">
+            
+            </SPAN><SPAN class="SS2">//Datos de cita agendada (opcion 2 del menú), ingresando el número de cita correspondiente.</SPAN><SPAN class="SS0">
+        </SPAN><SPAN class="SS5">Caso</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">2</SPAN><SPAN class="SS10">:</SPAN><SPAN class="SS0">
+            </SPAN><SPAN class="SS5">Si</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">numCitas</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">&gt;</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">0</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Entonces</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"----- Citas Agendadas -----"</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Para</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">i</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">0</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Hasta</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">numCitas</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">-</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">1</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Hacer</SPAN><SPAN class="SS0">
+                    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Cita "</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">i</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">+</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">1</SPAN><SPAN class="SS0">
+                    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Nombre: "</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS11">nombrePaciente</SPAN><SPAN class="SS0">    
+                    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Fecha: "</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">fechaCita</SPAN><SPAN class="SS0">
+                    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Horas: "</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">horaCita</SPAN><SPAN class="SS0">
+                    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"profesional: "</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS11">profesional</SPAN><SPAN class="SS0">
+                    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"-----------------------------"</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">FinPara</SPAN><SPAN class="SS0">
+            </SPAN><SPAN class="SS5">Sino</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"No hay citas agendadas."</SPAN><SPAN class="SS0">
+            </SPAN><SPAN class="SS5">FinSi</SPAN><SPAN class="SS0">
+            
+            </SPAN><SPAN class="SS2">//Cancelación de cita ingresada (opción 3 del menú)</SPAN><SPAN class="SS0">
+            
+        </SPAN><SPAN class="SS5">Caso</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">3</SPAN><SPAN class="SS10">:</SPAN><SPAN class="SS0">
+            </SPAN><SPAN class="SS5">Si</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">numCitas</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">&gt;</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">0</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Entonces</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Ingrese el número de la cita que desea cancelar: "</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Leer</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">numCitaCancelar</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Si</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">numCitaCancelar</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">≥</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">1</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">y</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">numCitaCancelar</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">≤</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">numCitas</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Entonces</SPAN><SPAN class="SS0">
+                    </SPAN><SPAN class="SS5">Para</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">i</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">numCitaCancelar</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">-</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">1</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Hasta</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">numCitas</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">-</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">2</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS5">Hacer</SPAN><SPAN class="SS0">
+                        
+                    </SPAN><SPAN class="SS5">FinPara</SPAN><SPAN class="SS0">
+                    </SPAN><SPAN class="SS11">numCitas</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS9">←</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS11">numCitas</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS10">-</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS4">1</SPAN><SPAN class="SS0">
+                    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Cita cancelada "</SPAN><SPAN class="SS0">
+                    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS6">"paciente: "</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS11">nombrePaciente</SPAN><SPAN class="SS0">
+                    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS6">", Fecha: "</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS11">fechaCita</SPAN><SPAN class="SS0">
+                    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Hora: "</SPAN><SPAN class="SS10">,</SPAN><SPAN class="SS11">horaCita</SPAN><SPAN class="SS0">  
+                </SPAN><SPAN class="SS5">Sino</SPAN><SPAN class="SS0">
+                    </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"Número de cita no válido."</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">FinSi</SPAN><SPAN class="SS0">
+            </SPAN><SPAN class="SS5">Sino</SPAN><SPAN class="SS0">
+                </SPAN><SPAN class="SS5">Escribir</SPAN><SPAN class="SS0"> </SPAN><SPAN class="SS6">"No hay citas agendadas para cancelar."</SPAN><SPAN class="SS0">
+            </SPAN><SPAN class="SS5">FinSi</SPAN><SPAN class="SS0">
+    </SPAN><SPAN class="SS5">FinSegun</SPAN><SPAN class="SS0">
+</SPAN><SPAN class="SS5">FinMientras</SPAN><SPAN class="SS0">
+    
+</SPAN><SPAN class="SS5">FinAlgoritmo</SPAN><SPAN class="SS0">
+    </SPAN>
+</PRE></BODY></HTML>
